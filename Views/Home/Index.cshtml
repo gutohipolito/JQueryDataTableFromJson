@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "JQuery DataTable From JSON";
+}
+
+<h2>JQuery DataTable From JSON</h2>
+
+<table id="names" class="display" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+    </tfoot>
+</table>
+
+@section script
+{
+    <script>
+        $(document).ready(function () {
+            $('#names').DataTable({
+                "ajax": "Data",
+                "columns": [
+                    { "data": "id" },
+                    { "data": "name" }
+                ]
+            });
+        });
+    </script>
+}
